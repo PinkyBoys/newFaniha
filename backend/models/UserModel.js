@@ -1,0 +1,56 @@
+import { Sequelize } from "sequelize";
+import db from "../config/Database.js";
+
+const { DataTypes } = Sequelize;
+
+const Users = db.define(
+  "users",
+  {
+    uuid: {
+      type: DataTypes.STRING,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    username: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [3, 100],
+      },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    role: {
+      type: DataTypes.STRING,
+      defaultValue: "user",
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "1",
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+  },
+  {
+    freezeTableName: true,
+  }
+);
+
+export default Users;

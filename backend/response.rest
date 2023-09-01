@@ -1,0 +1,76 @@
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/6ee0f897-ed28-4e3a-a28d-d12ec3110e9c
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "username" : "admin",
+  "password" : "fajar",
+  "confPassword" : "fajar"
+
+}
+
+###
+PATCH  http://localhost:5000/users/c0e08260-1c07-414e-863d-1f0b8cd03a7e
+Content-Type: application/json
+
+{
+  "name" : "yati"
+}
+
+###
+DELETE  http://localhost:5000/users/6ee0f897-ed28-4e3a-a28d-d12ec3110e9c
+
+///login User
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username" : "admin",
+  "password" : "fajar"
+}
+
+/// cek login
+###
+GET http://localhost:5000/me
+
+///logout
+###
+DELETE http://localhost:5000/logout
+
+
+
+//----------//
+//get all product
+###
+GET http://localhost:5000/products
+
+//get single product
+###
+GET http://localhost:5000/products/54de2387-c310-46c3-b8f8-674edc0b3a9e
+
+//tambah products
+###
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name" : "donat",
+  "price" : "2000"
+}
+
+###
+PATCH http://localhost:5000/products/1f4dcc72-c341-4fe9-b1aa-697c4f64f1da
+Content-Type: application/json
+
+{
+  "name" : "donat kentang"
+}
+
+###
+DELETE http://localhost:5000/products/1f4dcc72-c341-4fe9-b1aa-697c4f64f1da

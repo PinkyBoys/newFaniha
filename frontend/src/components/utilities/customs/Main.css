@@ -1,0 +1,17 @@
+#main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+#main::before {
+  content: "";
+  background-image: url("../../../upload/background/background.webp");
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
